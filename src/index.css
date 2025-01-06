@@ -85,6 +85,7 @@ main{
 .ingredients_title{
     margin-top: 40px;
     margin-bottom: 24px;
+    font-weight: 400;
 }
 
 .ingredients_list{
@@ -143,6 +144,24 @@ main{
 .add_ingredient_form > button:active{
     opacity: 1;
 }
+
+.recipe_container{
+    max-width: 600px;
+    margin-inline: auto;
+    color: #475467;
+    line-height: 28px;
+    font-size: 1.125rem;
+    font-weight: 400;
+
+    ul,ol{
+        padding-left: 2rem;
+        margin-bottom: 8px
+    }
+    .recipe_heading{
+        margin-block: 1.5rem 1rem;
+    }
+}
+
 
 @media only screen and (max-width: 540px) {
     .add_ingredient_form{
