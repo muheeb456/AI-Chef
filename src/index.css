@@ -85,7 +85,6 @@ main{
 .ingredients_title{
     margin-top: 40px;
     margin-bottom: 24px;
-    font-weight: 400;
 }
 
 .ingredients_list{
@@ -119,7 +118,7 @@ main{
 
 }
 
-.get_recipe_section > button{
+.button{
     font-family: 'Inter', sans-serif;
     background-color: #D17557;
     width: 115px;
@@ -131,6 +130,39 @@ main{
     font-weight: 500;
     align-self: flex-end;
     margin-left: auto;
+    position: relative;
+}
+
+.button .spinner {
+    position: absolute;
+    bottom: 25%;
+    left: 40%;
+    width: 20px;
+    height: 20px;
+    border: 3px solid white;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+.loading .button-text {
+    display: none;
+}
+
+.loading .spinner {
+    display: block;
+}
+
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .get_recipe_section > button:hover,

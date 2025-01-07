@@ -8,13 +8,17 @@ function Main() {
 
     const [recipe, setRecipe] = useState("");
 
+    const [loading, setLoading] = useState(false);
+
     function addIngredient(formData) {
         const newIngredient = formData.get('ingredient');
         newIngredient && setIngredients([...ingredients,newIngredient]);
     }
 
     async function getRecipe(){
+        setLoading(true)
         const generatedRecipe = await getRecipeFromMistral(ingredients)
+        setLoading(false)
         setRecipe(generatedRecipe)
     }
 
@@ -38,6 +42,7 @@ function Main() {
                     <Ingredients
                         ingredients={ingredients}
                         getRecipe={getRecipe}
+                        loading={loading}
                     />
                 }
 
